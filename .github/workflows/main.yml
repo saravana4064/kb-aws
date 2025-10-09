@@ -32,16 +32,17 @@ jobs:
         docker run -d -p 9000:8080 --name mcp-test mcp-server
         sleep 5  # give it time to start
         curl -XPOST "http://localhost:9000/2015-03-31/functions/function/invocations" \
-             -H "Content-Type: application/json" \
-             -d '{
-                  "httpMethod": "POST",
-                  "path": "/mcp",
-                  "headers": {
-                    "Content-Type": "application/json"
-                  },
-                  "body": "{\"input\":{\"text\":\"Hello from GitHub Actions\"}}",
-                  "isBase64Encoded": false
-                }'
+            -H "Content-Type: application/json" \
+            -d '{
+              "httpMethod": "POST",
+              "path": "/mcp",
+              "headers": {
+                "Content-Type": "application/json"
+              },
+              "body": "{\"input\":{\"text\":\"Hello from GitHub Actions\"}}",
+              "isBase64Encoded": false
+            }'
+
         docker stop mcp-test
         docker rm mcp-test
 
