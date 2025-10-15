@@ -24,7 +24,7 @@ async def mcp_handler(request: Request):
                 'type': 'KNOWLEDGE_BASE',
                 'knowledgeBaseConfiguration': {
                     'knowledgeBaseId': 'YMQMMQDPUJ',
-                    'modelArn': 'arn:aws:bedrock:us-east-1::foundation-model/amazon.titan-text-nova-pro',
+                    'modelArn': 'arn:aws:bedrock:us-east-1::foundation-model/amazon.nova-pro-v1:0',
                     'generationConfiguration': {
                         'promptTemplate': {
                             'textPromptTemplate': (
@@ -73,7 +73,7 @@ def lambda_handler(event, context):
                 'type': 'KNOWLEDGE_BASE',
                 'knowledgeBaseConfiguration': {
                     'knowledgeBaseId': 'YMQMMQDPUJ',
-                    'modelArn': 'arn:aws:bedrock:us-east-1::foundation-model/amazon.titan-text-nova-pro',
+                    'modelArn': 'arn:aws:bedrock:us-east-1::foundation-model/amazon.nova-pro-v1:0',
                     'generationConfiguration': {
                         'promptTemplate': {
                             'textPromptTemplate': (
