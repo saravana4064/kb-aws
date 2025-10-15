@@ -1,5 +1,5 @@
 from fastapi import FastAPI, Request
-from mangum import Mangum
+#from mangum import Mangum
 import boto3
 import logging
 
@@ -39,14 +39,14 @@ async def mcp_handler(request: Request):
             retrieveAndGenerateConfiguration={
                 'type': 'KNOWLEDGE_BASE',
                 'knowledgeBaseConfiguration': {
-                    'knowledgeBaseId': '0KKELEXKNG',  # Replace with your actual KB ID
-                    'modelArn': 'arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-3-haiku-20240307-v1:0',
+                    'knowledgeBaseId': 'YMQMMQDPUJ',  # Replace with your actual KB ID
+                    'modelArn': 'arn:aws:bedrock:us-east-1::foundation-model/amazon.nova-pro-v1:0',
                     'generationConfiguration': {
                         'promptTemplate': {
                             'textPromptTemplate': (
                                 "Using the following search results, answer the question clearly and concisely:\n\n"
                                 "$search_results$\n\n"
-                                "Question: $query"
+                                "Question: $query$"
                             )
                         }
                     },
@@ -56,7 +56,7 @@ async def mcp_handler(request: Request):
                                 "Conversation so far:\n$conversation_history$\n\n"
                                 "Search results:\n$search_results$\n\n"
                                 "Instructions: $output_format_instructions$\n\n"
-                                "Query: $query"
+                                "Query: $query$"
                             )
                         }
                     }
@@ -79,4 +79,4 @@ async def mcp_handler(request: Request):
         }
 
 # 👇 This makes it compatible with AWS Lambda
-handler = Mangum(app)
+#handler = Mangum(app)
