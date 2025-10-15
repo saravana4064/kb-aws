@@ -8,4 +8,4 @@ RUN pip3 install -r requirements.txt
 COPY main.py .
 
 # Set the Lambda handler
-CMD ["main.handler"]
+CMD ["main.lambda_handler"]
