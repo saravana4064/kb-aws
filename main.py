@@ -1,5 +1,5 @@
 from fastapi import FastAPI, Request
-#from mangum import Mangum
+from mangum import Mangum
 import boto3
 import logging
 
@@ -40,7 +40,7 @@ async def mcp_handler(request: Request):
                 'type': 'KNOWLEDGE_BASE',
                 'knowledgeBaseConfiguration': {
                     'knowledgeBaseId': 'YMQMMQDPUJ',  # Replace with your actual KB ID
-                    'modelArn': 'arn:aws:bedrock:us-east-1::foundation-model/amazon.nova-pro-v1:0',
+                    'modelArn': 'arn:aws:bedrock:us-east-1::foundation-model/amazon.titan-text-nova-pro',
                     'generationConfiguration': {
                         'promptTemplate': {
                             'textPromptTemplate': (
@@ -78,5 +78,6 @@ async def mcp_handler(request: Request):
             }
         }
 
-# 👇 This makes it compatible with AWS Lambda
-#handler = Mangum(app)
+# ✅ Lambda-compatible handler function
+def handler(event, context):
+    return Mangum(app)(event, context)
