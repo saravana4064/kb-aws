@@ -23,7 +23,7 @@ async def mcp_handler(request: Request):
             retrieveAndGenerateConfiguration={
                 'type': 'KNOWLEDGE_BASE',
                 'knowledgeBaseConfiguration': {
-                    'knowledgeBaseId': 'YMQMMQDPUJ',
+                    'knowledgeBaseId': 'NYLWHEUYVK',
                     'modelArn': 'arn:aws:bedrock:us-east-1::foundation-model/amazon.nova-pro-v1:0',
                     'generationConfiguration': {
                         'promptTemplate': {
@@ -72,7 +72,7 @@ def lambda_handler(event, context):
             retrieveAndGenerateConfiguration={
                 'type': 'KNOWLEDGE_BASE',
                 'knowledgeBaseConfiguration': {
-                    'knowledgeBaseId': 'YMQMMQDPUJ',
+                    'knowledgeBaseId': 'NYLWHEUYVK',
                     'modelArn': 'arn:aws:bedrock:us-east-1::foundation-model/amazon.nova-pro-v1:0',
                     'generationConfiguration': {
                         'promptTemplate': {
